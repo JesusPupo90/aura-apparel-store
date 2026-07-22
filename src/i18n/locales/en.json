@@ -1,0 +1,49 @@
+{
+  "nav": {
+    "all": "All Products",
+    "categories": "Categories",
+    "cart": "Cart"
+  },
+  "hero": {
+    "title": "AURA ARCHIVE '26",
+    "subtitle": "High-density minimalist apparel engineered for modern life.",
+    "cta": "EXPLORE COLLECTION"
+  },
+  "filters": {
+    "search_placeholder": "Search catalog...",
+    "all": "All",
+    "outerwear": "Outerwear",
+    "tshirts": "T-Shirts",
+    "accessories": "Accessories"
+  },
+  "product": {
+    "add_to_cart": "ADD TO CART",
+    "select_size": "SELECT SIZE",
+    "size_guide": "Size Guide (Inches)",
+    "chest": "Chest",
+    "length": "Length",
+    "quick_view": "QUICK VIEW",
+    "out_of_stock": "OUT OF STOCK"
+  },
+  "cart": {
+    "title": "YOUR BAG",
+    "empty": "Your bag is currently empty.",
+    "subtotal": "Subtotal",
+    "checkout": "PROCEED TO CHECKOUT",
+    "currency_symbol": "$",
+    "currency_code": "USD"
+  },
+  "promo_modal": {
+    "badge": "EXCLUSIVE DROP",
+    "title": "GET 15% OFF YOUR FIRST ORDER",
+    "subtitle": "Subscribe to early access drops and secret collections.",
+    "button": "CLAIM OFFER",
+    "dismiss": "NO THANKS, CONTINUE SHOPPING"
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "dev_prefix": "Developed by",
+    "dev_name": "Jesus Pupo",
+    "dev_studio": "WannaDev Studios"
+  }
+}

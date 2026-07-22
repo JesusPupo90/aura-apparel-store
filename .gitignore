@@ -1,0 +1,16 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# output files
+dist/
+build/
+
+# Eviroment Variables
+.env
+.env.local
+
+# System files & logs
+npm-debug.log*
+yarn-debug.log*
+.DS_Store

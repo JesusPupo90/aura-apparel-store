@@ -1,0 +1,49 @@
+{
+  "nav": {
+    "all": "Todos los Productos",
+    "categories": "Categorías",
+    "cart": "Carrito"
+  },
+  "hero": {
+    "title": "ARCHIVO AURA '26",
+    "subtitle": "Prendas minimalistas de alta densidad diseñadas para la vida moderna.",
+    "cta": "EXPLORAR COLECCIÓN"
+  },
+  "filters": {
+    "search_placeholder": "Buscar en el catálogo...",
+    "all": "Todos",
+    "outerwear": "Chaquetas",
+    "tshirts": "Camisetas",
+    "accessories": "Accesorios"
+  },
+  "product": {
+    "add_to_cart": "AÑADIR AL CARRITO",
+    "select_size": "SELECCIONAR TALLA",
+    "size_guide": "Guía de Tallas (cm)",
+    "chest": "Pecho",
+    "length": "Largo",
+    "quick_view": "VISTA RÁPIDA",
+    "out_of_stock": "AGOTADO"
+  },
+  "cart": {
+    "title": "TU BOLSA",
+    "empty": "Tu bolsa está vacía.",
+    "subtotal": "Subtotal",
+    "checkout": "FINALIZAR COMPRA",
+    "currency_symbol": "$",
+    "currency_code": "COP"
+  },
+  "promo_modal": {
+    "badge": "LANZAMIENTO EXCLUSIVO",
+    "title": "OBTÉN 15% OFF EN TU PRIMERA COMPRA",
+    "subtitle": "Suscríbete para acceder a lanzamientos anticipados y colecciones secretas.",
+    "button": "RECLAMAR OFERTA",
+    "dismiss": "NO GRACIAS, CONTINUAR COMPRANDO"
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados.",
+    "dev_prefix": "Desarrollado por",
+    "dev_name": "Jesus Pupo",
+    "dev_studio": "WannaDev Studios"
+  }
+}
