@@ -1,3 +1,7 @@
+/* ==========================================================================
+   IMPORTS & CONFIG
+   ========================================================================== */
+
 import { useState } from "react"
 import { Link } from "react-router-dom"
 import { useTranslation } from "react-i18next"
@@ -8,6 +12,10 @@ import { CheckCircle, ShoppingBag, ArrowLeft, CreditCard, Building, Banknote, Lo
 const EXCHANGE_RATE_COP = 4000
 const FREE_SHIPPING_THRESHOLD_COP = 200000
 const STANDARD_SHIPPING_COP = 15000
+
+/* ==========================================================================
+   STATE & HOOKS
+   ========================================================================== */
 
 function getProductName(product, lang) {
   if (typeof product?.name === "string") return product.name
@@ -49,6 +57,10 @@ export default function Checkout() {
   const shippingUSD = +(shippingCOP / EXCHANGE_RATE_COP).toFixed(2)
   const finalUSD = +(finalCOP / EXCHANGE_RATE_COP).toFixed(2)
 
+/* ==========================================================================
+   HANDLERS & LOGIC
+   ========================================================================== */
+
   const handleChange = (e) => {
     const { name, value } = e.target
     setForm((prev) => ({ ...prev, [name]: value }))
@@ -82,6 +94,10 @@ export default function Checkout() {
       window.scrollTo({ top: 0, behavior: "smooth" })
     }, 2500)
   }
+
+/* ==========================================================================
+   RENDER / JSX
+   ========================================================================== */
 
   if (cart.length === 0 && !isCompleted) {
     return (
@@ -140,6 +156,7 @@ export default function Checkout() {
 
         <form onSubmit={handleSubmit}>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+            {/* --- SHIPPING FORM --- */}
             <div className="lg:col-span-7 space-y-8">
               <fieldset className="space-y-5">
                 <legend className="text-xs font-mono font-semibold uppercase tracking-widest text-surface-dark/60 mb-4">
@@ -238,6 +255,7 @@ export default function Checkout() {
                 </div>
               </fieldset>
 
+              {/* --- PAYMENT METHOD --- */}
               <fieldset className="space-y-3">
                 <legend className="text-xs font-mono font-semibold uppercase tracking-widest text-surface-dark/60">
                   {t("checkout.payment_method", "Método de pago")}
@@ -262,6 +280,7 @@ export default function Checkout() {
               </fieldset>
             </div>
 
+            {/* --- ORDER SUMMARY --- */}
             <div className="lg:col-span-5 space-y-6">
               <div className="border border-black/10 p-5 space-y-5">
                 <span className="block text-xs font-mono font-semibold uppercase tracking-widest text-surface-dark/60">

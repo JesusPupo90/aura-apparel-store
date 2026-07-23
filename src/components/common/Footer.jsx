@@ -1,10 +1,22 @@
+/* ==========================================================================
+   IMPORTS & CONFIG
+   ========================================================================== */
+
 import { useTranslation } from "react-i18next"
 import { useNavigate, useLocation } from "react-router-dom"
+
+/* ==========================================================================
+   STATE & HOOKS
+   ========================================================================== */
 
 export default function Footer() {
   const { t } = useTranslation()
   const navigate = useNavigate()
   const location = useLocation()
+
+/* ==========================================================================
+   HANDLERS & LOGIC
+   ========================================================================== */
 
   const handleNavClick = (sectionId) => {
     if (location.pathname !== "/") {
@@ -24,12 +36,17 @@ export default function Footer() {
     }
   }
 
+/* ==========================================================================
+   RENDER / JSX
+   ========================================================================== */
+
   return (
     <footer className="w-full border-t border-surface-dark/20 bg-light backdrop-blur-md pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-12 text-left">
           
+          {/* --- BRAND --- */}
           <div className="space-y-3 md:col-span-1">
             <span 
               onClick={() => handleNavClick("hero")}
@@ -43,6 +60,7 @@ export default function Footer() {
             </p>
           </div>
 
+          {/* --- NAVIGATION --- */}
           <div className="space-y-3">
             <h4 className="text-xs font-bold tracking-widest uppercase text-surface-dark">
               Navigation
@@ -75,6 +93,7 @@ export default function Footer() {
             </ul>
           </div>
 
+          {/* --- CLIENT CARE --- */}
           <div className="space-y-3">
             <h4 className="text-xs font-bold tracking-widest uppercase text-surface-dark">
               Client Care
@@ -86,6 +105,7 @@ export default function Footer() {
             </ul>
           </div>
 
+          {/* --- SOCIAL / CONNECT --- */}
           <div className="space-y-3">
             <h4 className="text-xs font-bold tracking-widest uppercase text-surface-dark">
               Connect
@@ -111,6 +131,7 @@ export default function Footer() {
 
         </div>
 
+        {/* --- COPYRIGHT --- */}
         <div className="border-t border-surface-dark/10 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-surface-dark/70 font-poppins">
           <p>© {new Date().getFullYear()} AURA APPAREL. {t("footer.rights", "All rights reserved.")}</p>
 

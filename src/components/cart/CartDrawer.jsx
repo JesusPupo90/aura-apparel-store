@@ -1,3 +1,7 @@
+/* ==========================================================================
+   IMPORTS & CONFIG
+   ========================================================================== */
+
 import { useEffect } from "react"
 import { useTranslation } from "react-i18next"
 import { useNavigate } from "react-router-dom"
@@ -7,11 +11,19 @@ import { useCart } from "../../context/CartContext"
 import { formatPrice } from "../../utils/currency"
 import CartItem from "./CartItem"
 
+/* ==========================================================================
+   STATE & HOOKS
+   ========================================================================== */
+
 export default function CartDrawer() {
   const { t, i18n } = useTranslation()
   const navigate = useNavigate()
   const { cartItems, isCartOpen, setIsCartOpen, totalPriceUSD } = useCart()
   const currentLang = i18n.language
+
+/* ==========================================================================
+   HANDLERS & LOGIC
+   ========================================================================== */
 
   const handleGoToCheckout = () => {
     setIsCartOpen(false)
@@ -28,6 +40,10 @@ export default function CartDrawer() {
       document.body.style.overflow = "unset"
     }
   }, [isCartOpen])
+
+/* ==========================================================================
+   RENDER / JSX
+   ========================================================================== */
 
   return (
     <AnimatePresence>
@@ -48,6 +64,7 @@ export default function CartDrawer() {
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
             className="fixed top-0 right-0 bottom-0 w-full max-w-md z-50 bg-light border-l border-black/10 flex flex-col shadow-2xl"
           >
+            {/* --- CART HEADER --- */}
             <div className="flex items-center justify-between p-6 border-b border-black/10">
               <h2 className="text-lg font-semibold text-surface-dark tracking-wider uppercase">
                 {t("cart.title")}
@@ -67,6 +84,7 @@ export default function CartDrawer() {
               </div>
             ) : (
               <>
+                {/* --- CART ITEMS LIST --- */}
                 <div className="flex-1 overflow-y-auto p-6 space-y-4">
                   {cartItems.map((item) => (
                     <CartItem
@@ -76,7 +94,7 @@ export default function CartDrawer() {
                   ))}
                 </div>
 
-                {/* Footer del Cart con Totales */}
+                {/* --- CART FOOTER --- */}
                 <div className="border-t border-black/10 p-6 space-y-4 bg-black/5">
                   <div className="flex items-center justify-between text-sm">
                     <span className="text-muted">{t("cart.subtotal")}</span>

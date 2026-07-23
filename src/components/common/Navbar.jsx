@@ -1,13 +1,25 @@
+/* ==========================================================================
+   IMPORTS & CONFIG
+   ========================================================================== */
+
 import { useTranslation } from "react-i18next"
 import { useNavigate, useLocation } from "react-router-dom"
 import { ShoppingBag } from "lucide-react"
 import { useCart } from "../../context/CartContext"
+
+/* ==========================================================================
+   STATE & HOOKS
+   ========================================================================== */
 
 export default function Navbar() {
   const { t, i18n } = useTranslation()
   const { totalItemsCount, setIsCartOpen } = useCart()
   const navigate = useNavigate()
   const location = useLocation()
+
+/* ==========================================================================
+   HANDLERS & LOGIC
+   ========================================================================== */
 
   const toggleLanguage = () => {
     i18n.changeLanguage(i18n.language === "en" ? "es" : "en")
@@ -31,11 +43,16 @@ export default function Navbar() {
     }
   }
 
+/* ==========================================================================
+   RENDER / JSX
+   ========================================================================== */
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm bg-light/90 border-b border-surface-dark/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           
+          {/* --- BRAND / NAV LINKS --- */}
           <div className="flex items-center gap-10">
             <span 
               onClick={() => handleNavClick("hero")}
@@ -63,6 +80,7 @@ export default function Navbar() {
             </div>
           </div>
 
+          {/* --- ACTIONS (LANG SWITCHER + CART) --- */}
           <div className="flex items-center gap-6">
             <button
               onClick={toggleLanguage}

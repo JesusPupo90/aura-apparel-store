@@ -1,3 +1,7 @@
+/* ==========================================================================
+   IMPORTS & CONFIG
+   ========================================================================== */
+
 import { useState } from "react"
 import { useParams, useNavigate, Link } from "react-router-dom"
 import { useTranslation } from "react-i18next"
@@ -8,6 +12,10 @@ import { Truck, ShieldCheck, Check, ArrowLeft, Package } from "lucide-react"
 import products from "../data/products.json"
 
 const EXCHANGE_RATE_COP = 4000
+
+/* ==========================================================================
+   STATE & HOOKS
+   ========================================================================== */
 
 export default function ProductDetail() {
   const { id } = useParams()
@@ -36,6 +44,10 @@ export default function ProductDetail() {
   const priceCOP = Math.round(priceUSD * EXCHANGE_RATE_COP)
   const formattedCOP = `$ ${priceCOP.toLocaleString("es-CO")} COP`
 
+/* ==========================================================================
+   HANDLERS & LOGIC
+   ========================================================================== */
+
   const handleAddToCart = () => {
     if (product?.sizes?.length > 0 && !selectedSize) {
       setSizeError(true)
@@ -46,6 +58,10 @@ export default function ProductDetail() {
     addToCart(product, selectedSize || product?.sizes?.[0] || "M")
     setTimeout(() => setIsAdded(false), 2000)
   }
+
+/* ==========================================================================
+   RENDER / JSX
+   ========================================================================== */
 
   if (!product) {
     return (
@@ -82,6 +98,7 @@ export default function ProductDetail() {
         </button>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+          {/* --- PRODUCT IMAGE --- */}
           <div className="lg:col-span-7">
             <div className="relative aspect-[3/4] w-full rounded-2xl overflow-hidden bg-neutral-200 border border-black/5">
               <img
@@ -97,6 +114,7 @@ export default function ProductDetail() {
             </div>
           </div>
 
+          {/* --- PRODUCT INFO --- */}
           <div className="lg:col-span-5 space-y-6">
             {categoryKey && (
               <span className="block text-xs text-surface-dark/60 uppercase tracking-widest font-mono font-semibold">
@@ -112,6 +130,8 @@ export default function ProductDetail() {
               <p className="text-2xl font-bold">{formattedCOP}</p>
               <p className="text-sm text-muted">{formatPrice(priceUSD, currentLang)}</p>
             </div>
+
+            {/* --- SIZE SELECTOR --- */}
             {product?.sizes?.length > 0 && (
               <div className="space-y-3">
                 <span className="block text-xs font-semibold tracking-widest uppercase text-surface-dark/70">
@@ -184,6 +204,7 @@ export default function ProductDetail() {
               )}
             </button>
 
+            {/* --- SHIPPING INFO --- */}
             <div className="flex flex-col sm:flex-row gap-4 pt-2 border-t border-black/10">
               <div className="flex items-center gap-2 text-[11px] text-surface-dark/60 font-medium">
                 <Truck size={16} strokeWidth={1.5} />

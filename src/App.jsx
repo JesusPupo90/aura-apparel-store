@@ -1,4 +1,8 @@
-﻿import { BrowserRouter, Routes, Route } from "react-router-dom"
+﻿/* ==========================================================================
+   IMPORTS & CONFIG
+   ========================================================================== */
+
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { CartProvider } from "./context/CartContext"
 import Navbar from "./components/common/Navbar"
 import Footer from "./components/common/Footer"
@@ -6,6 +10,10 @@ import CartDrawer from "./components/cart/CartDrawer"
 import Home from "./pages/Home"
 import ProductDetail from "./pages/ProductDetail"
 import Checkout from "./pages/Checkout"
+
+/* ==========================================================================
+   RENDER / JSX
+   ========================================================================== */
 
 function App() {
   return (

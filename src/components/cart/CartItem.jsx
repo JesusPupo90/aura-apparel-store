@@ -1,7 +1,15 @@
+/* ==========================================================================
+   IMPORTS & CONFIG
+   ========================================================================== */
+
 import { useTranslation } from "react-i18next"
 import { Minus, Plus, Trash2 } from "lucide-react"
 import { useCart } from "../../context/CartContext"
 import { formatPrice } from "../../utils/currency"
+
+/* ==========================================================================
+   STATE & HOOKS
+   ========================================================================== */
 
 export default function CartItem({ item }) {
   const { t, i18n } = useTranslation()
@@ -10,6 +18,10 @@ export default function CartItem({ item }) {
   const { product, size, quantity } = item
   const productName = product.name?.[currentLang] || product.name?.en || ""
   const itemSubtotalUSD = (Number(product.priceUSD) || 0) * (Number(quantity) || 1)
+
+/* ==========================================================================
+   RENDER / JSX
+   ========================================================================== */
 
   return (
     <div className="p-4 flex gap-4 bg-white border border-black/10 rounded-2xl shadow-sm">
@@ -39,6 +51,7 @@ export default function CartItem({ item }) {
           </p>
         </div>
 
+        {/* --- QUANTITY CONTROLS --- */}
         <div className="flex items-center justify-between mt-3">
           <div className="flex items-center gap-2 border border-black/10 rounded-full px-2 py-1 bg-neutral-50">
             <button

@@ -1,3 +1,7 @@
+/* ==========================================================================
+   LOGIC
+   ========================================================================== */
+
 export const optimizeUnsplash = (url, width=800) => {
     if (!url || typeof url !== 'string' || !url.includes('images.unsplash.com')) {
         return url;

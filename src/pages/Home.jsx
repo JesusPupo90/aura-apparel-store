@@ -1,4 +1,8 @@
-﻿import { useState, useMemo, useRef } from "react"
+﻿/* ==========================================================================
+   IMPORTS & CONFIG
+   ========================================================================== */
+
+import { useState, useMemo, useRef } from "react"
 import { useTranslation } from "react-i18next"
 import products from "../data/products.json"
 import ProductFilter from "../components/product/ProductFilter"
@@ -8,12 +12,20 @@ import Newsletter from "../components/home/Newsletter"
 
 import { optimizeUnsplash } from "../utils/imageOptimizer"
 
+/* ==========================================================================
+   STATE & HOOKS
+   ========================================================================== */
+
 export default function Home() {
   const { t } = useTranslation()
   const [searchQuery, setSearchQuery] = useState("")
   const [activeCategory, setActiveCategory] = useState("all")
 
   const productsRef = useRef(null)
+
+/* ==========================================================================
+   HANDLERS & LOGIC
+   ========================================================================== */
 
   const scrollToProducts = () => {
     productsRef.current?.scrollIntoView({ behavior: "smooth", block: "start" })
@@ -45,8 +57,13 @@ export default function Home() {
     })
   }, [searchQuery, activeCategory])
 
+/* ==========================================================================
+   RENDER / JSX
+   ========================================================================== */
+
   return (
     <>
+    {/* --- HERO SECTION --- */}
     <section id="hero" className="bg-[#eaeaea] text-surface-dark py-8 lg:py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto space-y-8 lg:space-y-12">
         
@@ -98,6 +115,7 @@ export default function Home() {
       </div>
     </section>
 
+    {/* --- CATALOG / PRODUCTS SECTION --- */}
     <section ref={productsRef} id="catalog" className="py-12 sm:py-16 bg-light border-t border-black/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           <div id="filters">

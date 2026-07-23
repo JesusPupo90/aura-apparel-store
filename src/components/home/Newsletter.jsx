@@ -1,5 +1,13 @@
+/* ==========================================================================
+   IMPORTS & CONFIG
+   ========================================================================== */
+
 import { useState, useEffect } from "react"
 import { useTranslation } from "react-i18next"
+
+/* ==========================================================================
+   STATE & HOOKS
+   ========================================================================== */
 
 export default function Newsletter() {
   const { t } = useTranslation()
@@ -15,6 +23,10 @@ export default function Newsletter() {
     return () => clearTimeout(timer)
   }, [subscribed])
 
+/* ==========================================================================
+   HANDLERS & LOGIC
+   ========================================================================== */
+
   function handleSubmit(e) {
     e.preventDefault()
     setError(false)
@@ -28,6 +40,10 @@ export default function Newsletter() {
     setSubscribed(true)
     setEmail("")
   }
+
+/* ==========================================================================
+   RENDER / JSX
+   ========================================================================== */
 
   return (
     <section className="border-t border-black/10 py-16 px-4 bg-light text-surface-dark">

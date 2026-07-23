@@ -1,3 +1,7 @@
+/* ==========================================================================
+   IMPORTS & CONFIG
+   ========================================================================== */
+
 import { useState, useEffect } from "react"
 import { useTranslation } from "react-i18next"
 import { useCart } from "../../context/CartContext"
@@ -26,6 +30,10 @@ function toggleFavorite(id) {
   return updated
 }
 
+/* ==========================================================================
+   STATE & HOOKS
+   ========================================================================== */
+
 export default function ProductCard({ product }) {
   const { t, i18n } = useTranslation()
   const { addToCart } = useCart()
@@ -41,6 +49,10 @@ export default function ProductCard({ product }) {
   const defaultSize = product?.sizes?.[0] || "M"
   const categoryKey = product?.category
 
+/* ==========================================================================
+   HANDLERS & LOGIC
+   ========================================================================== */
+
   const handleAddToCart = () => {
     addToCart(product, defaultSize)
   }
@@ -53,30 +65,23 @@ export default function ProductCard({ product }) {
   
   const hasHoverImage = Boolean(product?.images?.hover)
 
+/* ==========================================================================
+   RENDER / JSX
+   ========================================================================== */
+
   return (
     <div
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       className="group bg-white border border-black/10 rounded-md overflow-hidden transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl"
     >
+      {/* --- PRODUCT IMAGE --- */}
       <div className="relative aspect-[4/5] overflow-hidden bg-neutral-100">
         <img
           src={product?.images?.primary && optimizeUnsplash(product.images.primary)}
           alt={productName}
-          // className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-300 ${ <--- Optional logic to switch images on hover
-          //   isHovered && hasHoverImage ? "opacity-0" : "opacity-100"}`}
           className="absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-300 opacity-100"
         />
-
-        {/* {hasHoverImage && (
-          <img
-            src={optimizedUnsplash(product.images.hover)}
-            alt={productName}
-            className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-300 ${
-              isHovered ? "opacity-100" : "opacity-0"}`
-            }
-          />
-        )} */}
 
         {product?.isNew && (
           <span className="absolute top-3 left-3 badge-promo">
@@ -100,6 +105,7 @@ export default function ProductCard({ product }) {
         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 pointer-events-none" />
       </div>
 
+      {/* --- PRODUCT INFO --- */}
       <div className="p-4 space-y-2">
         <span className="text-xs text-muted uppercase tracking-wider block">
           {categoryKey ? t(`filters.${categoryKey}`) : ""}

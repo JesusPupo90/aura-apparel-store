@@ -1,13 +1,26 @@
+/* ==========================================================================
+   IMPORTS & CONFIG
+   ========================================================================== */
+
 import { useTranslation } from "react-i18next"
 import { Search, X } from "lucide-react"
 
 const CATEGORIES = ["all", "outerwear", "tshirts", "accessories"]
 
+/* ==========================================================================
+   STATE & HOOKS
+   ========================================================================== */
+
 export default function ProductFilter({ searchQuery, onSearchChange, activeCategory, onCategoryChange }) {
   const { t } = useTranslation()
 
+/* ==========================================================================
+   RENDER / JSX
+   ========================================================================== */
+
   return (
     <div className="space-y-5">
+      {/* --- SEARCH BAR --- */}
       <div className="relative">
         <Search
           size={16}
@@ -34,6 +47,7 @@ export default function ProductFilter({ searchQuery, onSearchChange, activeCateg
         )}
       </div>
 
+      {/* --- CATEGORY FILTERS --- */}
       <div className="flex items-center gap-2 overflow-x-auto pb-1 sm:pb-0 sm:flex-wrap">
         {CATEGORIES.map((cat) => (
           <button

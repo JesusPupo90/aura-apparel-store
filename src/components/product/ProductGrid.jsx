@@ -1,6 +1,14 @@
+/* ==========================================================================
+   IMPORTS & CONFIG
+   ========================================================================== */
+
 import { motion, AnimatePresence } from "framer-motion"
 import { useTranslation } from "react-i18next"
 import ProductCard from "./ProductCard"
+
+/* ==========================================================================
+   STATE & HOOKS
+   ========================================================================== */
 
 export default function ProductGrid({ products = [] }) {
   const { t } = useTranslation()
@@ -14,6 +22,10 @@ export default function ProductGrid({ products = [] }) {
       </div>
     )
   }
+
+/* ==========================================================================
+   RENDER / JSX
+   ========================================================================== */
 
   return (
     <motion.div 

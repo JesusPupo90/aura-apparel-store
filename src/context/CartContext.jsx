@@ -1,10 +1,22 @@
+/* ==========================================================================
+   IMPORTS & CONFIG
+   ========================================================================== */
+
 import { createContext, useContext, useState, useCallback, useMemo } from "react"
 
 const CartContext = createContext(null)
 
+/* ==========================================================================
+   STATE & HOOKS
+   ========================================================================== */
+
 export function CartProvider({ children }) {
   const [cartItems, setCartItems] = useState([])
   const [isCartOpen, setIsCartOpen] = useState(false)
+
+/* ==========================================================================
+   HANDLERS & LOGIC
+   ========================================================================== */
 
   const addToCart = useCallback((product, size) => {
     setCartItems((prev) => {
