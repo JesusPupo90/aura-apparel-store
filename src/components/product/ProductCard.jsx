@@ -1,15 +1,41 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useTranslation } from "react-i18next"
 import { useCart } from "../../context/CartContext"
 import { formatPrice } from "../../utils/currency"
+import { PiHeartBreak, PiHeartFill } from "react-icons/pi"
 
 import { optimizeUnsplash } from "../../utils/imageOptimizer"
+
+const STORAGE_KEY = "aura_favorites"
+
+function getStoredFavorites() {
+  try {
+    const stored = sessionStorage.getItem(STORAGE_KEY)
+    return stored ? JSON.parse(stored) : []
+  } catch {
+    return []
+  }
+}
+
+function toggleFavorite(id) {
+  const current = getStoredFavorites()
+  const updated = current.includes(id)
+    ? current.filter((fid) => fid !== id)
+    : [...current, id]
+  sessionStorage.setItem(STORAGE_KEY, JSON.stringify(updated))
+  return updated
+}
 
 export default function ProductCard({ product }) {
   const { t, i18n } = useTranslation()
   const { addToCart } = useCart()
   const currentLang = i18n.language
   const [isHovered, setIsHovered] = useState(false)
+  const [isFavorite, setIsFavorite] = useState(false)
+
+  useEffect(() => {
+    setIsFavorite(getStoredFavorites().includes(product?.id))
+  }, [product?.id])
 
   const productName = product?.name?.[currentLang] || product?.name?.en || ""
   const defaultSize = product?.sizes?.[0] || "M"
@@ -17,6 +43,12 @@ export default function ProductCard({ product }) {
 
   const handleAddToCart = () => {
     addToCart(product, defaultSize)
+  }
+
+  const handleToggleFavorite = (e) => {
+    e.stopPropagation()
+    const updated = toggleFavorite(product?.id)
+    setIsFavorite(updated.includes(product?.id))
   }
   
   const hasHoverImage = Boolean(product?.images?.hover)
@@ -51,6 +83,19 @@ export default function ProductCard({ product }) {
             NEW
           </span>
         )}
+
+        <button
+          type="button"
+          onClick={handleToggleFavorite}
+          className="absolute top-3 right-3 z-10 rounded-full p-2.5 bg-[#eaeaea]/70 backdrop-blur-md border border-[#eaeaea]/40 text-surface-dark shadow-sm hover:bg-[#eaeaea]/90 transition-all active:scale-95"
+          aria-label={isFavorite ? t("product.remove_from_favorites") : t("product.add_to_favorites")}
+        >
+          {isFavorite ? (
+            <PiHeartFill className="text-black" size={18} />
+          ) : (
+            <PiHeartBreak className="text-surface-dark/70" size={18} />
+          )}
+        </button>
 
         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 pointer-events-none" />
       </div>
