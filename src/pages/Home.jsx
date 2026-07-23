@@ -51,7 +51,7 @@ export default function Home() {
       <div className="max-w-7xl mx-auto space-y-8 lg:space-y-12">
         
         <div className="flex justify-between items-center text-xs uppercase tracking-widest text-surface-dark/30 md:text-surface-dark/40 font-semibold border-b border-black/10 pb-4">
-          <span>{t("hero.subtitle", "High-density minimalist apparel")}</span>
+          <span>{t("hero.subtitle1", "High-density minimalist apparel")}</span>
           <span className="hidden sm:inline">SS / 2026 ARCHIVE</span>
         </div>
 
@@ -59,11 +59,11 @@ export default function Home() {
           
           <div className="lg:col-span-7 space-y-4 text-left">
             <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black leading-none tracking-tighter uppercase">
-              {t("hero.title", "AURA '26")}
+              AURA ARCHIVE '26
             </h1>
             
             <p className="text-sm sm:text-base text-surface-dark/80 max-w-md font-normal leading-relaxed pt-2">
-              Engineered for modern life. Clean lines, heavyweight fabrics, and timeless silhouettes.
+              {t("hero.subtitle2", "Engineered for modern life. Clean lines, heavyweight fabrics, and timeless silhouettes.")}
             </p>
           </div>
 
