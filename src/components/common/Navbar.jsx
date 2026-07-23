@@ -1,13 +1,34 @@
 import { useTranslation } from "react-i18next"
+import { useNavigate, useLocation } from "react-router-dom"
 import { ShoppingBag } from "lucide-react"
 import { useCart } from "../../context/CartContext"
 
 export default function Navbar() {
   const { t, i18n } = useTranslation()
   const { totalItemsCount, setIsCartOpen } = useCart()
+  const navigate = useNavigate()
+  const location = useLocation()
 
   const toggleLanguage = () => {
     i18n.changeLanguage(i18n.language === "en" ? "es" : "en")
+  }
+
+  const handleNavClick = (sectionId) => {
+    if (location.pathname !== "/") {
+      navigate("/")
+      setTimeout(() => {
+        scrollToSection(sectionId)
+      }, 100)
+    } else {
+      scrollToSection(sectionId)
+    }
+  }
+
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id)
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" })
+    }
   }
 
   return (
@@ -15,32 +36,34 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           
-          {/* Logo y Navegación Principal */}
           <div className="flex items-center gap-10">
-            <span className="text-xl font-extrabold tracking-widest text-surface-dark cursor-pointer select-none">
+            <span 
+              onClick={() => handleNavClick("hero")}
+              className="text-xl font-extrabold tracking-widest text-surface-dark cursor-pointer select-none"
+            >
               AURA APPAREL
             </span>
 
             <div className="hidden md:flex items-center gap-8">
-              {/* Botón: Todos los productos */}
-              <button className="relative text-sm font-medium text-surface-dark group py-1">
+              <button 
+                onClick={() => handleNavClick("catalog")}
+                className="relative text-sm font-medium text-surface-dark group py-1"
+              >
                 <span>{t("nav.all")}</span>
-                {/* Animación de línea elegante en hover */}
                 <span className="absolute bottom-0 left-0 w-full h-[1px] bg-surface-dark/40 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
               </button>
 
-              {/* Botón: Categorías */}
-              <button className="relative text-sm font-medium text-surface-dark group py-1">
+              <button 
+                onClick={() => handleNavClick("filters")}
+                className="relative text-sm font-medium text-surface-dark group py-1"
+              >
                 <span>{t("nav.categories")}</span>
                 <span className="absolute bottom-0 left-0 w-full h-[1px] bg-surface-dark/40 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
               </button>
             </div>
           </div>
 
-          {/* Acciones del Navbar (Idioma y Carrito) */}
           <div className="flex items-center gap-6">
-            
-            {/* Toggle de Idioma con Capsule Hover */}
             <button
               onClick={toggleLanguage}
               className="text-xs font-bold tracking-wider text-surface-dark border border-surface-dark/20 rounded-full px-3 py-1 hover:bg-surface-dark hover:text-light transition-all duration-300"
@@ -48,7 +71,6 @@ export default function Navbar() {
               {i18n.language === "en" ? "ES" : "EN"}
             </button>
 
-            {/* Icono del Carrito con Micro-interacción */}
             <button
               onClick={() => setIsCartOpen(true)}
               aria-label="Open cart"

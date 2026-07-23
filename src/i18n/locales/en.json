@@ -33,7 +33,8 @@
     "subtotal": "Subtotal",
     "checkout": "PROCEED TO CHECKOUT",
     "currency_symbol": "$",
-    "currency_code": "USD"
+    "currency_code": "USD",
+    "place_order": "PLACE ORDER"
   },
   "promo_modal": {
     "badge": "EXCLUSIVE DROP",
@@ -47,5 +48,47 @@
     "dev_prefix": "Developed by",
     "dev_name": "Jesus Pupo",
     "dev_studio": "WannaDev Studios"
+  },
+  "detail": {
+    "back": "Back",
+    "not_found_title": "Product Not Found",
+    "not_found_desc": "The item you are looking for does not exist or has been removed from the catalog.",
+    "back_to_catalog": "Back to Shop",
+    "added": "Added to Bag"
+  },
+  "checkout": {
+    "title": "CHECKOUT",
+    "empty_title": "Your bag is empty",
+    "empty_desc": "Add items from our catalog to continue.",
+    "back_to_catalog": "Back to Shop",
+    "back_to_shop": "Back to Shop",
+    "shipping_info": "SHIPPING INFORMATION",
+    "email": "Email Address",
+    "full_name": "Full Name",
+    "address": "Delivery Address",
+    "city": "City",
+    "phone": "Phone Number",
+    "payment_method": "PAYMENT METHOD",
+    "payment_card": "Credit Card",
+    "payment_pse": "Bank Transfer",
+    "payment_cash": "Cash on Delivery",
+    "summary": "ORDER SUMMARY",
+    "size": "Size",
+    "qty": "Qty",
+    "shipping": "Shipping",
+    "free": "Free",
+    "total": "TOTAL",
+    "processing": "PROCESSING PAYMENT...",
+    "place_order": "PLACE ORDER",
+    "success_title": "Order Confirmed!",
+    "success_order": "Your order ID is",
+    "success_msg": "We have received your order. A confirmation email with tracking details will be sent shortly."
+  },
+  "placeholder": {
+    "email": "hi@example.com",
+    "full_name": "John Doe",
+    "address": "1600 Pennsylvania Avenue NW",
+    "city": "Washington, DC 20500",
+    "phone": "+1 (555) 555-1234"
   }
 }

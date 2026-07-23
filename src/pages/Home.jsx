@@ -1,4 +1,4 @@
-﻿﻿import { useState, useMemo } from "react"
+﻿import { useState, useMemo, useRef } from "react"
 import { useTranslation } from "react-i18next"
 import products from "../data/products.json"
 import ProductFilter from "../components/product/ProductFilter"
@@ -10,6 +10,12 @@ export default function Home() {
   const { t } = useTranslation()
   const [searchQuery, setSearchQuery] = useState("")
   const [activeCategory, setActiveCategory] = useState("all")
+
+  const productsRef = useRef(null)
+
+  const scrollToProducts = () => {
+    productsRef.current?.scrollIntoView({ behavior: "smooth", block: "start" })
+  }
 
   const filteredProducts = useMemo(() => {
     if (!Array.isArray(products)) return []
@@ -39,10 +45,10 @@ export default function Home() {
 
   return (
     <>
-    <section className="bg-[#eaeaea] text-surface-dark py-8 lg:py-16 px-4 sm:px-6 lg:px-8">
+    <section id="hero" className="bg-[#eaeaea] text-surface-dark py-8 lg:py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto space-y-8 lg:space-y-12">
         
-        <div className="flex justify-between items-center text-xs uppercase tracking-widest text-surface-dark/70 font-semibold border-b border-black/10 pb-4">
+        <div className="flex justify-between items-center text-xs uppercase tracking-widest text-surface-dark/30 md:text-surface-dark/40 font-semibold border-b border-black/10 pb-4">
           <span>{t("hero.subtitle", "High-density minimalist apparel")}</span>
           <span className="hidden sm:inline">SS / 2026 ARCHIVE</span>
         </div>
@@ -79,7 +85,10 @@ export default function Home() {
             [ LIMITED RELEASE • 01/50 ]
           </span>
 
-          <button className="w-full sm:w-auto bg-surface-dark text-light px-8 py-4 rounded-md text-xs font-semibold tracking-widest uppercase hover:bg-neutral-800 transition-all shadow-md active:scale-95">
+          <button
+            onClick={scrollToProducts}
+            className="w-full sm:w-auto bg-surface-dark text-light px-8 py-4 rounded-md text-xs font-semibold tracking-widest uppercase hover:bg-neutral-800 transition-all shadow-md active:scale-95"
+          >
             {t("hero.cta", "EXPLORE COLLECTION")}
           </button>
         </div>
@@ -87,14 +96,16 @@ export default function Home() {
       </div>
     </section>
 
-    <section className="py-12 sm:py-16 bg-light border-t border-black/5">
+    <section ref={productsRef} id="catalog" className="py-12 sm:py-16 bg-light border-t border-black/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-          <ProductFilter
-            searchQuery={searchQuery}
-            onSearchChange={setSearchQuery}
-            activeCategory={activeCategory}
-            onCategoryChange={setActiveCategory}
-          />
+          <div id="filters">
+            <ProductFilter
+              searchQuery={searchQuery}
+              onSearchChange={setSearchQuery}
+              activeCategory={activeCategory}
+              onCategoryChange={setActiveCategory}
+            />
+          </div>
 
           {filteredProducts.length === 0 ? (
             <p className="text-center text-muted py-20 text-sm">

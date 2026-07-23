@@ -1,5 +1,6 @@
 import { useEffect } from "react"
 import { useTranslation } from "react-i18next"
+import { useNavigate } from "react-router-dom"
 import { motion, AnimatePresence } from "framer-motion"
 import { X } from "lucide-react"
 import { useCart } from "../../context/CartContext"
@@ -8,8 +9,14 @@ import CartItem from "./CartItem"
 
 export default function CartDrawer() {
   const { t, i18n } = useTranslation()
+  const navigate = useNavigate()
   const { cartItems, isCartOpen, setIsCartOpen, totalPriceUSD } = useCart()
   const currentLang = i18n.language
+
+  const handleGoToCheckout = () => {
+    setIsCartOpen(false)
+    navigate("/checkout")
+  }
 
   useEffect(() => {
     if (isCartOpen) {
@@ -77,7 +84,10 @@ export default function CartDrawer() {
                       {formatPrice(totalPriceUSD, currentLang)}
                     </span>
                   </div>
-                  <button className="bg-surface-dark text-light hover:bg-neutral-800 transition-colors rounded-full py-3 w-full text-center text-sm font-medium tracking-wide">
+                  <button
+                    onClick={handleGoToCheckout}
+                    className="w-full bg-surface-dark text-light py-4 text-xs font-bold uppercase tracking-widest rounded-none hover:bg-neutral-800 transition-all active:scale-95"
+                  >
                     {t("cart.checkout")}
                   </button>
                 </div>

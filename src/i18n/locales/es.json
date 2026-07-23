@@ -33,7 +33,8 @@
     "subtotal": "Subtotal",
     "checkout": "FINALIZAR COMPRA",
     "currency_symbol": "$",
-    "currency_code": "COP"
+    "currency_code": "COP",
+    "place_order": "FINALIZAR COMPRA"
   },
   "promo_modal": {
     "badge": "LANZAMIENTO EXCLUSIVO",
@@ -47,5 +48,47 @@
     "dev_prefix": "Desarrollado por",
     "dev_name": "Jesus Pupo",
     "dev_studio": "WannaDev Studios"
+  },
+  "detail": {
+    "back": "Volver",
+    "not_found_title": "Producto no encontrado",
+    "not_found_desc": "El artículo que buscas no existe o fue retirado del catálogo.",
+    "back_to_catalog": "Volver a la Tienda",
+    "added": "Añadido a la bolsa"
+  },
+  "checkout": {
+    "title": "CHECKOUT",
+    "empty_title": "Tu carrito está vacío",
+    "empty_desc": "Agrega productos desde nuestro catálogo para continuar.",
+    "back_to_catalog": "Volver a Tienda",
+    "back_to_shop": "Volver a la Tienda",
+    "shipping_info": "INFORMACIÓN DE ENVÍO",
+    "email": "Correo electrónico",
+    "full_name": "Nombre completo",
+    "address": "Dirección de entrega",
+    "city": "Ciudad",
+    "phone": "Celular / Teléfono",
+    "payment_method": "MÉTODO DE PAGO",
+    "payment_card": "Tarjeta",
+    "payment_pse": "PSE / Transferencia",
+    "payment_cash": "Contraentrega",
+    "summary": "RESUMEN DEL PEDIDO",
+    "size": "Talla",
+    "qty": "Cant",
+    "shipping": "Envío",
+    "free": "Gratis",
+    "total": "TOTAL",
+    "processing": "PROCESANDO PAGO...",
+    "place_order": "FINALIZAR COMPRA",
+    "success_title": "¡Pedido Confirmado!",
+    "success_order": "Tu orden es la",
+    "success_msg": "Hemos recibido tu pedido. Recibirás un correo de confirmación con el seguimiento del envío."
+  },
+  "placeholder": {
+    "email": "hola@ejemplo.com",
+    "full_name": "Juan Pérez",
+    "address": "Cra 45 # 23-12",
+    "city": "Medellín",
+    "phone": "+57 300 123 4567"
   }
 }
