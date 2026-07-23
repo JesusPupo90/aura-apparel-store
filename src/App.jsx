@@ -9,9 +9,9 @@ function App() {
   return (
     <BrowserRouter>
       <CartProvider>
-        <div className="h-screen bg-light text-surface-dark font-sans flex flex-col overflow-hidden">
+        <div className="min-h-screen bg-light text-surface-dark font-sans flex flex-col overflow-hidden">
           <Navbar />
-          <main className="flex-1 pt-16 overflow-y-auto">
+          <main className="flex-1 pt-16">
             <Routes>
               <Route path="/" element={<Home />} />
             </Routes>

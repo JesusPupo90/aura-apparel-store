@@ -19,7 +19,7 @@ export default function ProductFilter({ searchQuery, onSearchChange, activeCateg
           onChange={(e) => onSearchChange(e.target.value)}
           placeholder={t("filters.search_placeholder")}
           aria-label={t("filters.search_placeholder")}
-          className="w-full pl-10 pr-10 py-2.5 bg-white border border-black/10 rounded-full text-sm text-surface-dark placeholder-muted focus:outline-none focus:border-surface-dark/30 focus:ring-1 focus:ring-surface-dark/10 transition-all"
+          className="w-full pl-10 pr-10 py-2.5 bg-white border border-black/10 rounded-md text-sm text-surface-dark placeholder-muted focus:outline-none focus:border-surface-dark/30 focus:ring-1 focus:ring-surface-dark/10 transition-all"
         />
         
         {searchQuery && (
@@ -40,7 +40,7 @@ export default function ProductFilter({ searchQuery, onSearchChange, activeCateg
             key={cat}
             type="button"
             onClick={() => onCategoryChange(cat)}
-            className={`whitespace-nowrap px-4 py-2 rounded-full text-xs font-medium tracking-wide transition-all duration-200 ${
+            className={`whitespace-nowrap px-4 py-2 rounded-md text-xs font-medium tracking-wide transition-all duration-200 ${
               activeCategory === cat
                 ? "bg-surface-dark text-light"
                 : "bg-white text-muted border border-black/10 hover:border-surface-dark/30 hover:text-surface-dark"

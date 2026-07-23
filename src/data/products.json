@@ -2,8 +2,8 @@
   {
     "id": "aura-001",
     "name": {
-      "en": "Oversized Heavyweight Hoodie",
-      "es": "Hoodie Heavyweight Oversize"
+      "en": "Tactical Heavyweight Hoodie",
+      "es": "Hoodie Táctico Heavyweight"
     },
     "category": "outerwear",
     "priceUSD": 85.00,
@@ -34,6 +34,82 @@
     "sizeGuide": {
       "en": { "chest": "20 - 22 in", "length": "26 in" },
       "es": { "chest": "50 - 55 cm", "length": "66 cm" }
+    },
+    "isNew": false
+  },
+  {
+    "id": "aura-003",
+    "name": {
+      "en": "Overframed Utility Jacket",
+      "es": "Chaqueta Utilitaria Overframed"
+    },
+    "category": "outerwear",
+    "priceUSD": 120.00,
+    "images": {
+      "primary": "https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=800&q=80",
+      "hover": "https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=800&q=80"
+    },
+    "sizes": ["M", "L", "XL"],
+    "sizeGuide": {
+      "en": { "chest": "24 - 26 in", "length": "29 in" },
+      "es": { "chest": "60 - 66 cm", "length": "74 cm" }
+    },
+    "isNew": true
+  },
+  {
+    "id": "aura-004",
+    "name": {
+      "en": "Raw Edge Cotton Tee",
+      "es": "Camiseta Algodón Raw Edge"
+    },
+    "category": "tshirts",
+    "priceUSD": 50.00,
+    "images": {
+      "primary": "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=800&q=80",
+      "hover": "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=800&q=80"
+    },
+    "sizes": ["S", "M", "L", "XL"],
+    "sizeGuide": {
+      "en": { "chest": "21 - 23 in", "length": "27 in" },
+      "es": { "chest": "53 - 58 cm", "length": "68 cm" }
+    },
+    "isNew": false
+  },
+  {
+    "id": "aura-005",
+    "name": {
+      "en": "Architectural Leather Bag",
+      "es": "Bolso Utilitario Cuero AURA"
+    },
+    "category": "accessories",
+    "priceUSD": 110.00,
+    "images": {
+      "primary": "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=800&q=80",
+      "hover": "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=800&q=80"
+    },
+    "sizes": ["ONE SIZE"],
+    "sizeGuide": {
+      "en": { "chest": "N/A", "length": "N/A" },
+      "es": { "chest": "N/A", "length": "N/A" }
+    },
+    "isNew": true
+  },
+  {
+    "id": "aura-006",
+    "name": {
+      "en": "Structured Beanie",
+      "es": "Gorro Estructurado Minimal"
+    },
+    "category": "accessories",
+    "priceUSD": 35.00,
+    "images": {
+      "primary": "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?auto=format&fit=crop&w=800&q=80",
+      "hover": "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?auto=format&fit=crop&w=800&q=80"
+    },
+    "sizes": ["ONE SIZE"],
+    "sizeGuide": {
+      "en": { "chest": "N/A", "length": "N/A" },
+      "es": { "chest": "N/A", "length": "N/A" }
     },
     "isNew": false
   }

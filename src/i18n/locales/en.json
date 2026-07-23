@@ -6,15 +6,17 @@
   },
   "hero": {
     "title": "AURA ARCHIVE '26",
-    "subtitle": "High-density minimalist apparel engineered for modern life.",
-    "cta": "EXPLORE COLLECTION"
+    "subtitle": "Clean silhouettes, heavyweight fabrics, and conceptual design.",
+    "cta": "EXPLORE COLLECTION",
+    "tag": "TACTICAL COLLECTION"
   },
   "filters": {
     "search_placeholder": "Search catalog...",
     "all": "All",
     "outerwear": "Outerwear",
     "tshirts": "T-Shirts",
-    "accessories": "Accessories"
+    "accessories": "Accessories",
+    "no_results": "No products match your search."
   },
   "product": {
     "add_to_cart": "ADD TO CART",

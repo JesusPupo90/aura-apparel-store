@@ -3,6 +3,8 @@ import { useTranslation } from "react-i18next"
 import { useCart } from "../../context/CartContext"
 import { formatPrice } from "../../utils/currency"
 
+import { optimizeUnsplash } from "../../utils/imageOptimizer"
+
 export default function ProductCard({ product }) {
   const { t, i18n } = useTranslation()
   const { addToCart } = useCart()
@@ -23,26 +25,26 @@ export default function ProductCard({ product }) {
     <div
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="group bg-white border border-black/10 rounded-2xl overflow-hidden transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl"
+      className="group bg-white border border-black/10 rounded-md overflow-hidden transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl"
     >
       <div className="relative aspect-[4/5] overflow-hidden bg-neutral-100">
         <img
-          src={product?.images?.primary}
+          src={product?.images?.primary && optimizeUnsplash(product.images.primary)}
           alt={productName}
-          className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-300 ${
-            isHovered && hasHoverImage ? "opacity-0" : "opacity-100"
-          }`}
+          // className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-300 ${ <--- Optional logic to switch images on hover
+          //   isHovered && hasHoverImage ? "opacity-0" : "opacity-100"}`}
+          className="absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-300 opacity-100"
         />
 
-        {hasHoverImage && (
+        {/* {hasHoverImage && (
           <img
-            src={product.images.hover}
+            src={optimizedUnsplash(product.images.hover)}
             alt={productName}
             className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-300 ${
-              isHovered ? "opacity-100" : "opacity-0"
-            }`}
+              isHovered ? "opacity-100" : "opacity-0"}`
+            }
           />
-        )}
+        )} */}
 
         {product?.isNew && (
           <span className="absolute top-3 left-3 badge-promo">
@@ -68,7 +70,7 @@ export default function ProductCard({ product }) {
 
         <button
           onClick={handleAddToCart}
-          className="w-full bg-surface-dark text-light rounded-full py-2.5 text-sm font-medium hover:bg-neutral-800 transition-colors mt-2"
+          className="w-full bg-surface-dark text-light rounded-md py-2.5 text-sm font-medium hover:bg-neutral-800 transition-colors mt-2"
         >
           {t("product.add_to_cart")}
         </button>

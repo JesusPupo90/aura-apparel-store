@@ -6,15 +6,17 @@
   },
   "hero": {
     "title": "ARCHIVO AURA '26",
-    "subtitle": "Prendas minimalistas de alta densidad diseñadas para la vida moderna.",
-    "cta": "EXPLORAR COLECCIÓN"
+    "subtitle": "Siluetas de corte limpio, tejidos de alta densidad y diseño conceptual.",
+    "cta": "EXPLORAR COLECCIÓN",
+    "tag": "COLECCIÓN TÁCTICA"
   },
   "filters": {
     "search_placeholder": "Buscar en el catálogo...",
     "all": "Todos",
     "outerwear": "Chaquetas",
     "tshirts": "Camisetas",
-    "accessories": "Accesorios"
+    "accessories": "Accesorios",
+    "no_results": "No se encontraron productos que coincidan con la búsqueda."
   },
   "product": {
     "add_to_cart": "AÑADIR AL CARRITO",
