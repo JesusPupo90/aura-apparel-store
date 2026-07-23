@@ -3,6 +3,8 @@ import { useTranslation } from "react-i18next"
 import products from "../data/products.json"
 import ProductFilter from "../components/product/ProductFilter"
 import ProductGrid from "../components/product/ProductGrid"
+import BrandManifesto from "../components/home/BrandManifesto"
+import Newsletter from "../components/home/Newsletter"
 
 import { optimizeUnsplash } from "../utils/imageOptimizer"
 
@@ -117,6 +119,8 @@ export default function Home() {
         </div>
       </section>
 
+      <BrandManifesto />
+      <Newsletter />
     </>
   )
 }

@@ -90,5 +90,20 @@
     "address": "1600 Pennsylvania Avenue NW",
     "city": "Washington, DC 20500",
     "phone": "+1 (555) 555-1234"
+  },
+  "manifesto": {
+    "badge": "[ ARCHIVE PHILOSOPHY • 2026 ]",
+    "title_line1": "ESSENTIAL SILHOUETTES",
+    "title_line2": "HEAVYWEIGHT FABRICS",
+    "title_line3": "CONCEPTUAL DESIGN",
+    "body": "At AURA, every piece is conceived for durability and minimalism. Heavyweight fabrics, clean construction, and timeless form — no logos, no trends. Just pure, functional design built to outlast the season.",
+    "footer_tag": "DESIGNED FOR ENDURANCE"
+  },
+  "newsletter": {
+    "title": "EARLY ACCESS DROPS",
+    "subtitle": "Subscribe to receive limited release notifications.",
+    "cta": "SUBSCRIBE",
+    "success": "ACCESS GRANTED",
+    "error": "Please enter a valid email address."
   }
 }

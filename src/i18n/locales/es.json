@@ -90,5 +90,20 @@
     "address": "Cra 45 # 23-12",
     "city": "Medellín",
     "phone": "+57 300 123 4567"
+  },
+  "manifesto": {
+    "badge": "[ FILOSOFÍA DE ARCHIVO • 2026 ]",
+    "title_line1": "SILUETAS ESENCIALES",
+    "title_line2": "TEJIDOS DE ALTA DENSIDAD",
+    "title_line3": "DISEÑO CONCEPTUAL",
+    "body": "En AURA, cada prenda está concebida para la durabilidad y el minimalismo. Tejidos de alta densidad, construcción limpia y forma atemporal — sin logos, sin tendencias. Solo diseño puro y funcional, hecho para perdurar más allá de la temporada.",
+    "footer_tag": "DISEÑADO PARA LA DURABILIDAD"
+  },
+  "newsletter": {
+    "title": "LANZAMIENTOS DE ACCESO ANTICIPADO",
+    "subtitle": "Suscríbete para recibir avisos de lanzamientos limitados.",
+    "cta": "SUSCRIBIRSE",
+    "success": "ACCESO OTORGADO",
+    "error": "Por favor ingresa un correo electrónico válido."
   }
 }

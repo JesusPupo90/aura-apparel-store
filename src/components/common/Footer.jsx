@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <p className="text-sm text-surface-dark/70 font-poppins">
           {t("footer.dev_prefix")}{" "}
-          <span className="brand-contrast font-semibold">
+          <span className="text-surface-dark/40 font-bold">
             {t("footer.dev_name")}
           </span>
           {" • "}
